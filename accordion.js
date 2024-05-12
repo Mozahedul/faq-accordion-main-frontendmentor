@@ -3,6 +3,12 @@ const details = document.getElementsByClassName("details");
 const expandIcons = document.getElementsByClassName("expand-icon");
 console.log("expandIcons", expandIcons);
 
+// Keep open the default accordion menu
+document.addEventListener("DOMContentLoaded", function () {
+  details[0].classList.add("default-accordion");
+  expandIcons[0].src = "./assets/images/icon-minus.svg";
+});
+
 for (let i = 0; i < accordionBtns.length; i++) {
   accordionBtns[i].addEventListener("click", function () {
     if (details[i].offsetHeight !== details[i].scrollHeight) {
